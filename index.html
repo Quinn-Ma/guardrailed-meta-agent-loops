@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guardrailed Meta-Agent Loops</title>
+<meta name="description" content="GuardrailLoop makes policy preservation, compute accounting, and crash recovery jointly testable for self-improving agent workflows, and shows that recovering the outcome is not evidence of exactly-once execution.">
+<meta property="og:title" content="Guardrailed Meta-Agent Loops: Stress-Testing Policy Pinning, Budget Bounds, and Crash Recovery">
+<meta property="og:description" content="GuardrailLoop makes policy preservation, compute accounting, and crash recovery jointly testable for self-improving agent workflows, and shows that recovering the outcome is not evidence of exactly-once execution.">
+<meta property="og:image" content="assets/og.png">
+<meta name="citation_title" content="Guardrailed Meta-Agent Loops: Stress-Testing Policy Pinning, Budget Bounds, and Crash Recovery">
+<meta name="citation_author" content="Qinzhen Ma"><meta name="citation_author" content="Jialin Wu">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_pdf_url" content="assets/paper.pdf">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2300205B'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Georgia'>Q</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <p class="venue">arXiv preprint, 2026</p>
+  <h1>Guardrailed Meta-Agent Loops: Stress-Testing Policy Pinning, Budget Bounds, and Crash Recovery</h1>
+  <p class="authors"><span class="author">Qinzhen Ma<sup>1</sup></span><span class="author">Jialin Wu<sup>2</sup></span></p>
+  <p class="affs"><span><sup>1</sup>Rice University</span><span><sup>2</sup>UC San Diego</span></p>
+  <nav class="buttons"><a class="btn" href="assets/paper.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M14 2v6h6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Paper</a><a class="btn" href="https://arxiv.org/abs/2609.12216" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" fill="none"/></svg>arXiv</a><a class="btn" href="https://github.com/Quinn-Ma/guardrailed-meta-agent-loops" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>GitHub</a><a class="btn" href="#bibtex"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h11l3 3v15H5z M9 9h7M9 13h7M9 17h4" stroke="currentColor" stroke-width="1.8" fill="none"/></svg>BibTeX</a></nav>
+</header>
+<main>
+  <section class="tldr"><h2>TL;DR</h2><p>GuardrailLoop makes policy preservation, compute accounting, and crash recovery jointly testable for self-improving agent workflows, and shows that recovering the outcome is not evidence of exactly-once execution.</p></section>
+  <section><h2>Abstract</h2><p class="abstract">Self-improving agent workflows create an audit problem when the same controller can change both its behavior and the conditions under which that behavior is judged. We present GuardrailLoop, a simulation-based testbed that makes three operational contracts jointly testable: preservation of human-defined policy, compute accounting at every recorded execution prefix, and recovery of a specified scientific state after crashes. A hash-pinned policy fixes goals, scope, evaluation identity, budget, and release conditions; machine-directed evolution is restricted to a code-owned feature catalog and bounded knobs. The contribution is an executable boundary and an evaluation protocol that separates useful adaptation, state recovery, and repeated execution. In a paired 50-seed 2 x 2 study, round-stage growth changes target attainment by +1.00 and restricted mean compute to target by -56.97 simulated GPU-hours (95% paired-bootstrap interval [-58.91,-54.70]); idle growth has zero measured utility effect. Across 240 enumerated crash injections, all runs recover the defined outcome, but only 210 preserve the normalized trace: 30 pre-commit crashes repeat a planner call. Resource-drift, kill-switch, integrity, and output-guard matrices satisfy their specified checks. These findings show why successful outcome recovery is insufficient evidence of exactly-once execution. They establish conformance within one calibrated deterministic testbed, rather than general safety or real-world self-improvement.</p></section>
+  <section><h2>Results</h2><figure><img src="assets/fig1.png" alt="Figure 1" loading="lazy"><figcaption><b>Figure 1.</b> Utility in the calibrated simulator. (a) Round-stage growth reduces restricted mean compute to target from 160 to 103.03 GPU-hours and changes observed hits from 0/50 to 50/50; idle growth has no measured utility effect. (b) Selected-checkpoint observed and latent scores rise with the pinned budget; the 0.95 threshold is crossed only at budget 160.</figcaption></figure></section>
+  <section><h2>Paper</h2><div class="thumbs"><a href="assets/paper.pdf" target="_blank" rel="noopener"><img src="assets/page1.png" alt="Page 1" loading="lazy"></a><a href="assets/paper.pdf" target="_blank" rel="noopener"><img src="assets/page2.png" alt="Page 2" loading="lazy"></a><a href="assets/paper.pdf" target="_blank" rel="noopener"><img src="assets/page3.png" alt="Page 3" loading="lazy"></a><a href="assets/paper.pdf" target="_blank" rel="noopener"><img src="assets/page4.png" alt="Page 4" loading="lazy"></a></div><p class="muted"><a href="assets/paper.pdf" target="_blank" rel="noopener">Download PDF</a> (10 pages)</p></section>
+  <section id="bibtex"><h2>BibTeX</h2><div class="bib"><button class="copy" type="button">Copy</button><pre><code>@article{ma2026guardrailed,
+  title  = {Guardrailed Meta-Agent Loops: Stress-Testing Policy Pinning, Budget Bounds, and Crash Recovery},
+  author = {Qinzhen Ma and Jialin Wu},
+  journal = {arXiv preprint arXiv:2609.12216},
+  year   = {2026}
+}</code></pre></div></section>
+</main>
+<footer><p>&copy; 2026 <a href="https://quinn-ma.github.io/">Qinzhen Ma</a> &middot; Source on <a href="https://github.com/Quinn-Ma/guardrailed-meta-agent-loops">GitHub</a></p></footer>
+<script>
+document.querySelector('.copy').addEventListener('click', e => {
+  navigator.clipboard.writeText(document.querySelector('.bib code').innerText).then(() => {
+    e.target.textContent = 'Copied'; setTimeout(() => e.target.textContent = 'Copy', 1500);
+  });
+});
+</script>
+</body>
+</html>
